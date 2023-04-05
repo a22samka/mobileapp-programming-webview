@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.loadUrl("https://google.se");
         WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        webSettings.setJavaScriptEnabled(false);
 
         /*
         * Rename your App. Tip: Values->Strings

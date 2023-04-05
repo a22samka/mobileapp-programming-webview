@@ -1,42 +1,33 @@
 
 # Rapport
+Började med att skapa mitt eget projekt genom att forka och clona ner det förbyggda appen till Android Studio.
+Sedan ändrade jag namnet på appen till Samuels WebView som syns på bilden efter: ![img_2.png](img_2.png)
 
-**Skriv din rapport här!**
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Efter detta enablade jag Internet på appen samt skapade min WebView. Jag gav den ett ID och gjorde 
+sedan en variabel som jag kallade myWebView. Jag localiserade det och skapade sedan en WebViewClient 
+som jag sedan satte ihop med min WebView. Efter detta enablade jag javascript på min WebViewClient.
+Det som skrivits om ovan syns nedan:
 
-## Följande grundsyn gäller dugga-svar:
+    myWebView = findViewById(R.id.my_webview);
+    myWebView.setWebViewClient(new WebViewClient());
+    myWebView.loadUrl("https://his.se");
+    WebSettings webSettings = myWebView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+ 
+Sist så skulle man fixa två olika sidor, en extern och en intern. Jag gjorde en HTML sida för den interna 
+samt en länk till google som den externa. ![img_3.png](img_3.png) Nedan syns hur detta såg ut:
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
+    public void showExternalWebPage(){
+    // TODO: Add your code for showing external web page here
+    myWebView.loadUrl("https://google.se");
     }
-}
-```
 
-Bilder läggs i samma mapp som markdown-filen.
+    public void showInternalWebPage(){
+    // TODO: Add your code for showing internal web page here
+    myWebView.loadUrl("file:///android_asset/about.html");
+    }
 
-![](android.png)
 
-Läs gärna:
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+
